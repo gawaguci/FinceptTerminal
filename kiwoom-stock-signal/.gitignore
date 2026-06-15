@@ -1,0 +1,34 @@
+# 민감정보 (계획서 19.1) - 절대 커밋 금지
+.env
+.env.local
+*.key
+*.pfx
+*.p12
+*.pem
+cert/
+secrets/
+
+# 운영 로그 및 실거래 데이터
+logs/
+data/live/
+*.sqlite
+*.db
+
+# 빌드 산출물
+target/
+*.class
+
+# Delphi 빌드 산출물
+*.exe
+*.dcu
+*.~*
+__history/
+__recovery/
+*.local
+*.identcache
+*.dproj.local
+
+# IDE
+.idea/
+*.iml
+.vscode/

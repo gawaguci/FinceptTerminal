@@ -1,0 +1,32 @@
+# 전략/리스크/키움 설정 예시 (계획서 19.2)
+# 주의: 계좌번호, 인증서, 비밀번호 등 민감정보는 이 파일에 두지 않는다.
+#      민감정보는 .env.local 또는 Windows 사용자 환경 변수로 관리한다.
+
+kiwoom:
+  orderEnabled: false   # 기본값: 주문 비활성 (자동주문 금지 원칙)
+  dryRun: true
+  maxTrPerSecond: 5
+  maxTrPerMinute: 100
+  maxTrPerHour: 1000
+
+strategy:
+  macdFast: 12
+  macdSlow: 26
+  macdSignal: 9
+  rsiPeriod: 14
+  minTradeAmount: 3000000000   # 30억 원
+  volumeSpikeMultiplier: 1.5
+  maxRsiForEntry: 75
+  maxVwapGapRate: 0.03
+  maxSpreadTicks: 3
+  interestThreshold: 70
+  watchThreshold: 80
+  strongThreshold: 90
+
+risk:
+  maxPositionRate: 0.05
+  maxDailyLossRate: 0.01
+  maxLossPerTradeRate: 0.003
+  maxHoldingCount: 5
+  cooldownMinutes: 20
+  newBuyCutoffTime: "15:10:00"

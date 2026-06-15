@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  키움 OpenAPI+ 기반 실시간 종목발굴/매수타이밍 프로그램의 Java Signal Engine 모듈.
+  - 지표 계산(MACD/RSI/VWAP/MA), 후보 종목 점수화, 매수타이밍 판단, 리스크 관리, 로그 저장을 담당한다.
+  - 키움 OCX 직접 호출은 Delphi Gateway가 담당하며 본 모듈은 순수 비즈니스 로직으로 유지한다(테스트 용이성).
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>kr.co.mango.stock</groupId>
+    <artifactId>signal-engine</artifactId>
+    <version>0.1.0</version>
+    <packaging>jar</packaging>
+
+    <name>Kiwoom Signal Engine</name>
+    <description>실시간 종목발굴 및 매수타이밍 신호 엔진</description>
+
+    <properties>
+        <!-- 계획서 권장: Java 17 이상. 본 환경은 JDK 21이므로 release 17로 호환 빌드한다. -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.10.2</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
